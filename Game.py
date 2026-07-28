@@ -5,15 +5,15 @@ Saved_Name = ""
 def _input_get(input, output, error):
     output = input.get().strip()
     if output == "":
-        error.set("Enter a Text")
+        error.set("Enter Something Valid")
     else:
         error.set("")
+        print(output)
         return(output)
 
 root = tk.Tk()
 
 Name_Error_TextVar = tk.StringVar(root, value="")
-Saved_Name_TextVar = tk.StringVar(root, value=Saved_Name)
 
 root.title("Ocean Quiz")
 
