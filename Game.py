@@ -7,22 +7,24 @@ def _input_get(input, output, error):
     if output == "":
         error.set("Enter a Text")
     else:
+        error.set("")
         return(output)
 
 root = tk.Tk()
 
 Name_Error_TextVar = tk.StringVar(root, value="")
+Saved_Name_TextVar = tk.StringVar(root, value=Saved_Name)
 
 root.title("Ocean Quiz")
 
 Name_Input = tk.Entry(root,)
 
-Save_Name = tk.Button(text="Enter Name", command=lambda: _input_get(Name_Input, Saved_Name, Name_Error_TextVar,))
+Save_Name = tk.Button(text="Enter Name", command=lambda: _input_get(Name_Input, Saved_Name, Name_Error_TextVar))
 
-Name_Error = tk.Label(root, textvariable=Name_Error_TextVar,)
+Name_Error = tk.Label(root, textvariable=Name_Error_TextVar)
 
 Name_Input.grid(column=0, row=0, padx=20, pady=(30, 5))
 Save_Name.grid(column=1, row=0, padx=20, pady=(30, 5))
-Name_Error.grid(column=0, row=1, padx=20, pady=(0, 30))
+Name_Error.place(x=20, y=55)
 
 root.mainloop()
